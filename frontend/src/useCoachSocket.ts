@@ -12,7 +12,7 @@ export type CoachSuggestion = {
   receivedAt: number
 }
 
-const SOCKET_URL = 'ws://127.0.0.1:8000/ws/coach'
+const SOCKET_URL = `${import.meta.env.VITE_COACH_WS_URL ?? 'ws://127.0.0.1:8000'}/ws/coach`
 
 export function useCoachSocket() {
   const socketRef = useRef<WebSocket | null>(null)
